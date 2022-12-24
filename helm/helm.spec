@@ -10,7 +10,7 @@ Version: 3.10.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: helm
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The Kubernetes Package Manager
 License: Apache-2.0
 URL: %{gourl}
@@ -24,9 +24,8 @@ Source0: %{gosource}
 
 %build
 export LDFLAGS="-X helm.sh/helm/v3/internal/version.version=%{version} \
--X helm.sh/helm/v3/internal/version.metadata=%{version} \
 -X helm.sh/helm/v3/internal/version.gitCommit=%{commit0} \
--X helm.sh/helm/v3/internal/version.gitTreeState=clean "
+-X helm.sh/helm/v3/internal/version.gitTreeState=archive "
 %gobuild -o %{gobuilddir}/bin/helm %{goipath}/cmd/helm
 
 %install
@@ -39,5 +38,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 3.10.3-2
+- Fix version
 * Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 3.10.3-1
 - Initial build
