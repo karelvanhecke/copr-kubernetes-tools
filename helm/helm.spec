@@ -1,6 +1,6 @@
 %global goipath helm.sh/helm/v3
 %global forgeurl https://github.com/helm/helm
-Version: 3.10.3
+Version: 3.11.0
 
 %global gomodulesmode GO111MODULE=on
 
@@ -10,7 +10,7 @@ Version: 3.10.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: helm
-Release: 2%{?dist}
+Release: 1%{?dist}
 Summary: The Kubernetes Package Manager
 License: Apache-2.0
 URL: %{gourl}
@@ -38,6 +38,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Jan 19 2023 Karel Van Hecke <copr@karelvanhecke.com> - 3.11.0-1
+- Bump to 3.11.0
 * Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 3.10.3-2
 - Fix version
 * Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 3.10.3-1
