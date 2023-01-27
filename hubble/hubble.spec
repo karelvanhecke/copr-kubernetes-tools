@@ -1,9 +1,9 @@
 %global goipath github.com/cilium/hubble
-Version: 0.11.0
+Version: 0.11.1
 
 %gometa
 
-%global commit0 b4ff6de8c1ddb827c1ca68d4cc7ea1ca924fb96e
+%global commit0 9d483eb60ec71a2358c3d513af75f3761a7832e2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: hubble
@@ -35,6 +35,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Jan 27 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.11.1-1
+- Bump to 0.11.1
 * Thu Jan 12 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.11.0-1
 - Bump to 0.11.0
 * Sat Jan 07 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.10.0-1
