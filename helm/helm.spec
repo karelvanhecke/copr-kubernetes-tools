@@ -1,12 +1,12 @@
 %global goipath helm.sh/helm/v3
 %global forgeurl https://github.com/helm/helm
-Version: 3.11.0
+Version: 3.11.1
 
 %global gomodulesmode GO111MODULE=on
 
 %gometa
 
-%global commit0 835b7334cfe2e5e27870ab3ed4135f136eecc704
+%global commit0 293b50c65d4d56187cd4e2f390f0ada46b4c4737
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: helm
@@ -38,6 +38,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Feb 10 2023 Karel Van Hecke <copr@karelvanhecke.com> - 3.11.1-1
+- Bump to 3.11.1 - security release
 * Thu Jan 19 2023 Karel Van Hecke <copr@karelvanhecke.com> - 3.11.0-1
 - Bump to 3.11.0
 * Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 3.10.3-2

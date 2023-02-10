@@ -1,13 +1,13 @@
 %global goipath         sigs.k8s.io/kustomize
 %global forgeurl        https://github.com/kubernetes-sigs/kustomize
-Version: 4.5.7
-%global tag             kustomize/v4.5.7
+Version: 5.0.0
+%global tag             kustomize/v%{version}
 
 %global gomodulesmode GO111MODULE=on
 
 %gometa
 
-%global commit0 56d82a8378dfc8dc3b3b1085e5a6e67b82966bd7
+%global commit0 738ca56ccd511a5fcd57b958d6d2019d5b7f2091
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: kustomize
@@ -39,5 +39,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Feb 10 2023 Karel Van Hecke <copr@karelvanhecke.com> - 5.0.0-1
+- Bump to 5.0.0
 * Sat Dec 24 2022 Karel Van Hecke <copr@karelvanhecke.com> - 4.5.7-1
 - Initial build
