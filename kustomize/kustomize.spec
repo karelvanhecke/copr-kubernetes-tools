@@ -27,7 +27,7 @@ Source0: %{gosource}
 export LDFLAGS="-X %{goipath}/api/provenance.version=%{version} \
 -X %{goipath}/api/provenance.gitCommit=%{commit0} \
 -X %{goipath}/api/provenance.buildDate=$(date -u -d @${SOURCE_DATE_EPOCH} +%FT%TZ) "
-%gobuild -o %{gobuilddir}/bin/kustomize %{goipath}/kustomize/v4
+%gobuild -o %{gobuilddir}/bin/kustomize %{goipath}/kustomize/v5
 
 %install
 install -m 0755 -vd                     %{buildroot}%{_bindir}
