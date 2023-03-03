@@ -1,12 +1,9 @@
 %global goipath github.com/fluxcd/flux2
-Version: 0.39.0
+Version: 0.40.2
 
 %global gomodulesmode GO111MODULE=on
 
 %gometa
-
-%global commit0 978cc0c5b8b85a976edd7e457a09b0f4d1255390
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: flux
 Release: 1%{?dist}
@@ -36,10 +33,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc README.md MAINTAINERS CODE_OF_CONDUCT.md CONTRIBUTING.md
 %{_bindir}/*
 
 %changelog
+* Fri Feb 03 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.40.2-1
+- Bump to 0.40.2
 * Fri Feb 03 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.39.0-1
 - Bump to 0.39.0
 * Thu Jan 12 2023 Karel Van Hecke <copr@karelvanhecke.com> - 0.38.3-1
